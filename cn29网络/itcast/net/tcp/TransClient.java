@@ -1,4 +1,4 @@
-package cn.itcast.net.tcp;
+ï»¿package cn.itcast.net.tcp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,44 +15,44 @@ public class TransClient {
 	 * @throws  
 	 */
 	public static void main(String[] args) throws IOException {
-		System.out.println("¿Í»§¶ËÔËĞĞ......");
-		// ¿Í»§¶Ë£º
-		// ²½Öè£º
-		// 1£¬´´½¨socket£¬Ã÷È·µØÖ·ºÍ¶Ë¿Ú¡£
+		System.out.println("å®¢æˆ·ç«¯è¿è¡Œ......");
+		// å®¢æˆ·ç«¯ï¼š
+		// æ­¥éª¤ï¼š
+		// 1ï¼Œåˆ›å»ºsocketï¼Œæ˜ç¡®åœ°å€å’Œç«¯å£ã€‚
 		Socket s = new Socket("192.168.1.223", 10005);
 
-		// 2£¬Ô´£º¼üÅÌÂ¼Èë¡£»ñÈ¡ĞèÒª×ª»»µÄÊı¾İ¡£
+		// 2ï¼Œæºï¼šé”®ç›˜å½•å…¥ã€‚è·å–éœ€è¦è½¬æ¢çš„æ•°æ®ã€‚
 		BufferedReader bufr = new BufferedReader(new InputStreamReader(System.in));
 		
-		// 3£¬Ä¿µÄ£ºÍøÂç£¬socketÊä³öÁ÷¡£½«Â¼ÈëµÄÊı¾İ·¢ËÍµ½·şÎñ¶Ë¡£
+		// 3ï¼Œç›®çš„ï¼šç½‘ç»œï¼Œsocketè¾“å‡ºæµã€‚å°†å½•å…¥çš„æ•°æ®å‘é€åˆ°æœåŠ¡ç«¯ã€‚
 //		OutputStream out = s.getOutputStream();
-		//¼ÈÈ»¶¼ÊÇ×Ö·ûÊı¾İ£¬ÎªÁË±ãÓÚ²Ù×÷£¬Ê¹ÓÃ¶îÍâ¹¦ÄÜ£¬×ª»»¡£Í¬Ê±Ìá¸ßĞ§ÂÊ¡£
-		//BufferedWriter bufOut = new BufferedWriter(new OutputStreamWriter(out));¿ÉÒÔÊ¹ÓÃ´òÓ¡Á÷
+		//æ—¢ç„¶éƒ½æ˜¯å­—ç¬¦æ•°æ®ï¼Œä¸ºäº†ä¾¿äºæ“ä½œï¼Œä½¿ç”¨é¢å¤–åŠŸèƒ½ï¼Œè½¬æ¢ã€‚åŒæ—¶æé«˜æ•ˆç‡ã€‚
+		//BufferedWriter bufOut = new BufferedWriter(new OutputStreamWriter(out));å¯ä»¥ä½¿ç”¨æ‰“å°æµ
 		PrintWriter out = new PrintWriter(s.getOutputStream(),true);
 		
-		// 4£¬Ô´£ºsocket£¬socket¶ÁÈ¡Á÷£¬¶ÁÈ¡·şÎñ¶Ë·¢»ØÀ´µÄ´óĞ´Êı¾İ¡£
+		// 4ï¼Œæºï¼šsocketï¼Œsocketè¯»å–æµï¼Œè¯»å–æœåŠ¡ç«¯å‘å›æ¥çš„å¤§å†™æ•°æ®ã€‚
 //		InputStream in = s.getInputStream();
 		BufferedReader bufIn = new BufferedReader(new InputStreamReader(s.getInputStream()));
 		
-		// 5£¬Ä¿µÄ£º¿Í»§¶ËÏÔÊ¾Æ÷£¬½«´óĞ´Êı¾İÏÔÊ¾³öÀ´¡£Ö±½ÓÊ¹ÓÃÊä³öÓï¾ä¡£
+		// 5ï¼Œç›®çš„ï¼šå®¢æˆ·ç«¯æ˜¾ç¤ºå™¨ï¼Œå°†å¤§å†™æ•°æ®æ˜¾ç¤ºå‡ºæ¥ã€‚ç›´æ¥ä½¿ç”¨è¾“å‡ºè¯­å¥ã€‚
 		
-		// 6£¬Æµ·±µÄ¶ÁĞ´²Ù×÷¡£
+		// 6ï¼Œé¢‘ç¹çš„è¯»å†™æ“ä½œã€‚
 		String line = null;
 		while((line=bufr.readLine())!=null){
 			
-			//½«¶ÁÈ¡¼üÅÌµÄÊı¾İ·¢ËÍµ½·şÎñ¶Ë¡£
+			//å°†è¯»å–é”®ç›˜çš„æ•°æ®å‘é€åˆ°æœåŠ¡ç«¯ã€‚
 			out.println(line);
 //			out.flush();
 			if("over".equals(line)){
 				break;
 			}
 			
-			//¶ÁÈ¡·şÎñ¶Ë·µ»ØµÄÊı¾İ¡£
+			//è¯»å–æœåŠ¡ç«¯è¿”å›çš„æ•°æ®ã€‚
 			String upperText = bufIn.readLine();
 			System.out.println(upperText);
 		}
 		
-		// 7£¬¹Ø±Õ×ÊÔ´¡£
+		// 7ï¼Œå…³é—­èµ„æºã€‚
 		s.close();
 	}
 

@@ -1,4 +1,4 @@
-package cn.itcast.net.uploadtext;
+ï»¿package cn.itcast.net.uploadtext;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,19 +16,19 @@ public class UploadTextClient {
 	 * @throws UnknownHostException 
 	 */
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		System.out.println("ÉÏ´«ÎÄ¼ş¿Í»§¶ËÔËĞĞ......");
-		// ¿Í»§¶Ë£º
-		// ²½Öè£º
-		// 1£¬´´½¨socket£¬Ã÷È·µØÖ·ºÍ¶Ë¿Ú¡£
+		System.out.println("ä¸Šä¼ æ–‡ä»¶å®¢æˆ·ç«¯è¿è¡Œ......");
+		// å®¢æˆ·ç«¯ï¼š
+		// æ­¥éª¤ï¼š
+		// 1ï¼Œåˆ›å»ºsocketï¼Œæ˜ç¡®åœ°å€å’Œç«¯å£ã€‚
 		Socket s = new Socket("192.168.1.223", 10006);
 
-		// 2£¬Ô´£º¶ÁÈ¡ÎÄ±¾ÎÄ¼ş¡£»ñÈ¡ĞèÒª×ª»»µÄÊı¾İ¡£
+		// 2ï¼Œæºï¼šè¯»å–æ–‡æœ¬æ–‡ä»¶ã€‚è·å–éœ€è¦è½¬æ¢çš„æ•°æ®ã€‚
 		BufferedReader bufr = new BufferedReader(new FileReader("tempfile\\client.txt"));
 		
-		// 3£¬Ä¿µÄ£ºÍøÂç£¬socketÊä³öÁ÷¡£½«Â¼ÈëµÄÊı¾İ·¢ËÍµ½·şÎñ¶Ë¡£
+		// 3ï¼Œç›®çš„ï¼šç½‘ç»œï¼Œsocketè¾“å‡ºæµã€‚å°†å½•å…¥çš„æ•°æ®å‘é€åˆ°æœåŠ¡ç«¯ã€‚
 		PrintWriter out = new PrintWriter(s.getOutputStream(),true);
 		
-		// 4£¬Æµ·±µÄ¶ÁĞ´²Ù×÷¡£
+		// 4ï¼Œé¢‘ç¹çš„è¯»å†™æ“ä½œã€‚
 		String line = null;
 		while((line=bufr.readLine())!=null){
 			
@@ -36,17 +36,17 @@ public class UploadTextClient {
 			
 		}
 		
-		//¸ø·şÎñ¶Ë·¢ËÍÒ»¸ö½áÊø±ê¼Ç¡£Õâ¸ö±ê¼ÇÊÇÔ¼¶¨±ê¼Ç¡£ÓĞµãÂé·³¡£¿ÉÒÔ¸ü¼òµ¥¡£Ê¹ÓÃsocket¶ÔÏóµÄshutdownOutput();
+		//ç»™æœåŠ¡ç«¯å‘é€ä¸€ä¸ªç»“æŸæ ‡è®°ã€‚è¿™ä¸ªæ ‡è®°æ˜¯çº¦å®šæ ‡è®°ã€‚æœ‰ç‚¹éº»çƒ¦ã€‚å¯ä»¥æ›´ç®€å•ã€‚ä½¿ç”¨socketå¯¹è±¡çš„shutdownOutput();
 //		out.println("over");
-		s.shutdownOutput();//Ïò·şÎñ¶Ë·¢ËÍÁË½áÊø±ê¼Ç¡£¿ÉÒÔÈÃ·şÎñ¶Ë½áÊø¶ÁÈ¡µÄ¶¯×÷¡£
+		s.shutdownOutput();//å‘æœåŠ¡ç«¯å‘é€äº†ç»“æŸæ ‡è®°ã€‚å¯ä»¥è®©æœåŠ¡ç«¯ç»“æŸè¯»å–çš„åŠ¨ä½œã€‚
 		
 		
-		// 5£¬Ô´£ºsocket£¬socket¶ÁÈ¡Á÷£¬¶ÁÈ¡·şÎñ¶Ë·¢»ØÀ´µÄÉÏ´«³É¹¦ĞÅÏ¢¡£
+		// 5ï¼Œæºï¼šsocketï¼Œsocketè¯»å–æµï¼Œè¯»å–æœåŠ¡ç«¯å‘å›æ¥çš„ä¸Šä¼ æˆåŠŸä¿¡æ¯ã€‚
 		BufferedReader bufIn = new BufferedReader(new InputStreamReader(s.getInputStream()));
 		String info = bufIn.readLine();
 		System.out.println(info);
 		
-		// 6£¬¹Ø±Õ×ÊÔ´¡£
+		// 6ï¼Œå…³é—­èµ„æºã€‚
 		bufr.close();
 		s.close();
 

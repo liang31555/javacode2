@@ -1,4 +1,4 @@
-package cn.itcast.net.uploadpic;
+ï»¿package cn.itcast.net.uploadpic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -117,10 +117,10 @@ public class UploadPicByGUI extends javax.swing.JFrame {
 	private void uploadPic(File srcFile) throws IOException {
 		Socket s = new Socket("192.168.1.223", 10007);
 
-		// 2,¶ÁÈ¡Ô´Í¼Æ¬¡£
+		// 2,è¯»å–æºå›¾ç‰‡ã€‚
 		FileInputStream fis = new FileInputStream(srcFile);
 
-		// 3,Ä¿µÄÊÇsocket Êä³öÁ÷¡£
+		// 3,ç›®çš„æ˜¯socket è¾“å‡ºæµã€‚
 		OutputStream out = s.getOutputStream();
 
 		byte[] buf = new byte[1024];
@@ -130,16 +130,16 @@ public class UploadPicByGUI extends javax.swing.JFrame {
 			out.write(buf, 0, len);
 		}
 
-		// ¸æËß·şÎñÆ÷¶ËÍ¼Æ¬Êı¾İ·¢ËÍÍê±Ï£¬²»ÒªµÈ×Å¶ÁÁË¡£
+		// å‘Šè¯‰æœåŠ¡å™¨ç«¯å›¾ç‰‡æ•°æ®å‘é€å®Œæ¯•ï¼Œä¸è¦ç­‰ç€è¯»äº†ã€‚
 		s.shutdownOutput();
 
-		// ¶ÁÈ¡ÉÏ´«³É¹¦×ÖÑù¡£
+		// è¯»å–ä¸Šä¼ æˆåŠŸå­—æ ·ã€‚
 		InputStream in = s.getInputStream();
 		byte[] bufIn = new byte[1024];
 		int lenIn = in.read(bufIn);
 		jTextArea1.setText(new String(bufIn, 0, lenIn));
 
-		// ¹Ø±Õ¡£
+		// å…³é—­ã€‚
 		fis.close();
 		s.close();
 
@@ -147,12 +147,12 @@ public class UploadPicByGUI extends javax.swing.JFrame {
 	
 	private void jButton2ActionPerformed(ActionEvent evt) {
 		if(srcFile==null){
-			jTextArea1.setText("ÇëÑ¡ÔñÒ»¸öÀ©Õ¹ÃûÎªjpgµÄÍ¼Æ¬");
+			jTextArea1.setText("è¯·é€‰æ‹©ä¸€ä¸ªæ‰©å±•åä¸ºjpgçš„å›¾ç‰‡");
 			return;
 		}
 		
 		if(srcFile.length()>1024*1024*3){
-			jTextArea1.setText("ÎÄ¼şÌå»ı¹ı´ó£¬²»ĞĞ£¡");
+			jTextArea1.setText("æ–‡ä»¶ä½“ç§¯è¿‡å¤§ï¼Œä¸è¡Œï¼");
 			return;
 		}
 		

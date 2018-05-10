@@ -1,4 +1,4 @@
-package cn.itcast.net.uploadpic;
+ï»¿package cn.itcast.net.uploadpic;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,15 +15,15 @@ public class UploadPicClient {
 	 * @throws  
 	 */
 	public static void main(String[] args) throws IOException {
-		System.out.println("ÉÏ´«Í¼Æ¬¿Í»§¶ËÔËĞĞ......");
-		//1,´´½¨socket¡£
+		System.out.println("ä¸Šä¼ å›¾ç‰‡å®¢æˆ·ç«¯è¿è¡Œ......");
+		//1,åˆ›å»ºsocketã€‚
 		Socket s = new Socket("192.168.1.223", 10007);
 		
-		//2,¶ÁÈ¡Ô´Í¼Æ¬¡£
+		//2,è¯»å–æºå›¾ç‰‡ã€‚
 		File picFile = new File("tempfile\\1.jpg");
 		FileInputStream fis = new FileInputStream(picFile);
 		
-		//3,Ä¿µÄÊÇsocket Êä³öÁ÷¡£
+		//3,ç›®çš„æ˜¯socket è¾“å‡ºæµã€‚
 		OutputStream out = s.getOutputStream();
 		
 		byte[] buf = new byte[1024];
@@ -33,17 +33,17 @@ public class UploadPicClient {
 			out.write(buf,0,len);
 		}
 		
-		//¸æËß·şÎñÆ÷¶ËÍ¼Æ¬Êı¾İ·¢ËÍÍê±Ï£¬²»ÒªµÈ×Å¶ÁÁË¡£
+		//å‘Šè¯‰æœåŠ¡å™¨ç«¯å›¾ç‰‡æ•°æ®å‘é€å®Œæ¯•ï¼Œä¸è¦ç­‰ç€è¯»äº†ã€‚
 		s.shutdownOutput();
 		
-		//¶ÁÈ¡ÉÏ´«³É¹¦×ÖÑù¡£
+		//è¯»å–ä¸Šä¼ æˆåŠŸå­—æ ·ã€‚
 		InputStream in = s.getInputStream();
 		byte[] bufIn = new byte[1024];
 		int lenIn = in.read(bufIn);
 		System.out.println(new String(bufIn,0,lenIn));
 		
 		
-		//¹Ø±Õ¡£
+		//å…³é—­ã€‚
 		fis.close();
 		s.close();
 

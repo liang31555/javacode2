@@ -1,4 +1,4 @@
-package cn.itcast.net.my;
+ï»¿package cn.itcast.net.my;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,8 +16,8 @@ public class MyServer {
 		
 		
 		/*
-		 *  ×Ô¶¨Òåserver ·şÎñ¶Ë
-		 *  »ñÈ¡ä¯ÀÀÆ÷µÄĞÅÏ¢¡£²¢·´À¡ĞÅÏ¢¡£
+		 *  è‡ªå®šä¹‰server æœåŠ¡ç«¯
+		 *  è·å–æµè§ˆå™¨çš„ä¿¡æ¯ã€‚å¹¶åé¦ˆä¿¡æ¯ã€‚
 		 */
 		System.out.println("my server run....");
 		ServerSocket ss = new ServerSocket(9090);
@@ -25,16 +25,16 @@ public class MyServer {
 		Socket s = ss.accept();
 		System.out.println(s.getInetAddress().getHostAddress()+"....connected");
 		
-		//¶ÁÈ¡¿Í»§¶ËµÄÊı¾İ¡£
+		//è¯»å–å®¢æˆ·ç«¯çš„æ•°æ®ã€‚
 		InputStream in = s.getInputStream();
 		byte[] buf = new byte[1024];
 		int len = in.read(buf);
 		String text = new String(buf,0,len);
 		System.out.println(text);
 		
-		//¸ø¿Í»§¶Ë»ØÀ¡Êı¾İ¡£
+		//ç»™å®¢æˆ·ç«¯å›é¦ˆæ•°æ®ã€‚
 		PrintWriter out = new PrintWriter(s.getOutputStream(),true);
-		out.println("<font color='red' size='7'>»¶Ó­¹âÁÙ</font>");
+		out.println("<font color='red' size='7'>æ¬¢è¿å…‰ä¸´</font>");
 		
 		
 		s.close();

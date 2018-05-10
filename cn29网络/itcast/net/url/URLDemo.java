@@ -1,4 +1,4 @@
-package cn.itcast.net.url;
+ï»¿package cn.itcast.net.url;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +15,7 @@ public class URLDemo {
 		
 		String str_url = "http://192.168.1.223:8080/myweb/2.html";
 		
-		//½«urlµØÖ··â×°³É¶ÔÏó¡£
+		//å°†urlåœ°å€å°è£…æˆå¯¹è±¡ã€‚
 		URL url = new URL(str_url);
 		
 //		System.out.println("getProtocol:"+url.getProtocol());
@@ -25,7 +25,7 @@ public class URLDemo {
 //		System.out.println("getFile:"+url.getFile());
 //		System.out.println("getQuery:"+url.getQuery());
 		
-		//»ñÈ¡Ö¸¶¨×ÊÔ´µÄÁ¬½Ó¶ÔÏó¡£//·â×°ÁËsocket¡£
+		//è·å–æŒ‡å®šèµ„æºçš„è¿æ¥å¯¹è±¡ã€‚//å°è£…äº†socketã€‚
 		URLConnection conn = url.openConnection();
 		
 //		System.out.println(conn);

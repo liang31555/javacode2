@@ -1,4 +1,4 @@
-package cn.itcast.net.uploadpic;
+ï»¿package cn.itcast.net.uploadpic;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -22,15 +22,15 @@ public class UploadPic implements Runnable {
 			String ip = s.getInetAddress().getHostAddress();
 			System.out.println(ip + ".....connected");
 
-			// ¶ÁÈ¡Í¼Æ¬Êı¾İ¡£
+			// è¯»å–å›¾ç‰‡æ•°æ®ã€‚
 			InputStream in = s.getInputStream();
 
-			// Ğ´Í¼Æ¬Êı¾İµ½ÎÄ¼ş¡£
+			// å†™å›¾ç‰‡æ•°æ®åˆ°æ–‡ä»¶ã€‚
 			File dir = new File("e:\\uploadpic");
 			if (!dir.exists()) {
 				dir.mkdir();
 			}
-			// ÎªÁË±ÜÃâ¸²¸Ç£¬Í¨¹ı¸øÖØÃûµÄÎÄ¼ş½øĞĞ±àºÅ¡£
+			// ä¸ºäº†é¿å…è¦†ç›–ï¼Œé€šè¿‡ç»™é‡åçš„æ–‡ä»¶è¿›è¡Œç¼–å·ã€‚
 			int count = 1;
 			File picFile = new File(dir, ip + "(" + count + ").jpg");
 			while (picFile.exists()) {
@@ -45,11 +45,11 @@ public class UploadPic implements Runnable {
 				fos.write(buf, 0, len);
 			}
 
-			// ¸ø¿Í»§¶ËÒ»¸ö»ØÀ¡ĞÅÏ¢¡£
+			// ç»™å®¢æˆ·ç«¯ä¸€ä¸ªå›é¦ˆä¿¡æ¯ã€‚
 			OutputStream out = s.getOutputStream();
-			out.write("ÉÏ´«³É¹¦".getBytes());
+			out.write("ä¸Šä¼ æˆåŠŸ".getBytes());
 
-			// ¹Ø±Õ×ÊÔ´¡£
+			// å…³é—­èµ„æºã€‚
 			fos.close();
 			s.close();
 		} catch (IOException e) {
