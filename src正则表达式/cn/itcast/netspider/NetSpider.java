@@ -1,4 +1,4 @@
-package cn.itcast.netspider;
+ï»¿package cn.itcast.netspider;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,9 +22,9 @@ public class NetSpider {
 	public static void main(String[] args) throws IOException {
 		
 		/*
-		 * ÍøÂçÅÀ³æ£ºÆäÊµ¾ÍÊÇÒ»¸öÓ¦ÓÃ³ÌĞò£¬»ñÈ¡ÍøÂçÖĞµÄÖ¸¶¨ĞÅÏ¢(·ûºÏÖ¸¶¨¹æÔòµÄĞÅÏ¢)¡£
+		 * ç½‘ç»œçˆ¬è™«ï¼šå…¶å®å°±æ˜¯ä¸€ä¸ªåº”ç”¨ç¨‹åºï¼Œè·å–ç½‘ç»œä¸­çš„æŒ‡å®šä¿¡æ¯(ç¬¦åˆæŒ‡å®šè§„åˆ™çš„ä¿¡æ¯)ã€‚
 		 * 
-		 * ÍøÂçÖĞµÄÓÊ¼şµØÖ·¡£
+		 * ç½‘ç»œä¸­çš„é‚®ä»¶åœ°å€ã€‚
 		 * 
 		 */
 		File file = new File("tempfile\\mail.html");
@@ -33,29 +33,29 @@ public class NetSpider {
 //		List<String> list = getMails(file,regex);
 		String str_url = "http://bbs.tianya.cn/post-enterprise-401802-2.shtml";
 		
-		//http://tieba.baidu.com/p/2088202080 ±¸Ñ¡¡£
+		//http://tieba.baidu.com/p/2088202080 å¤‡é€‰ã€‚
 		
 		List<String> list = getMailsByNet(str_url, regex);
 		for(String mail : list){
 			System.out.println("List:"+mail);
 		}
 	}
-	//»ùÓÚÍøÂç¡£
+	//åŸºäºç½‘ç»œã€‚
 	public static List<String> getMailsByNet(String str_url,String regex) throws IOException{
 		
 		List<String> list = new ArrayList<String>();
 		
-		//1,½«str_url·â×°³ÉURL¶ÔÏó¡£
+		//1,å°†str_urlå°è£…æˆURLå¯¹è±¡ã€‚
 		URL url = new URL(str_url);
 		
-		//2,´ò¿ªÁ¬½Ó¡£
+		//2,æ‰“å¼€è¿æ¥ã€‚
 		URLConnection conn = url.openConnection();
 		
-		//3,»ñÈ¡¶ÁÈ¡Á÷¡£
+		//3,è·å–è¯»å–æµã€‚
 		InputStream in = conn.getInputStream();
 		BufferedReader bufIn = new BufferedReader(new InputStreamReader(in));
 		
-		//4,½«ÕıÔò±í´ïÊ½±àÒë³É¶ÔÏó¡£
+		//4,å°†æ­£åˆ™è¡¨è¾¾å¼ç¼–è¯‘æˆå¯¹è±¡ã€‚
 		Pattern p = Pattern.compile(regex);
 		
 		String line = null;
@@ -75,15 +75,15 @@ public class NetSpider {
 		return list;
 	}
 	
-	//»ùÓÚ±¾µØÎÄ¼ş¡£
+	//åŸºäºæœ¬åœ°æ–‡ä»¶ã€‚
 	public static List<String> getMails(File file, String regex) throws IOException {
 	
 		
 		List<String> list = new ArrayList<String>();
-		//1,¶ÁÈ¡ÎÄ¼ş
+		//1,è¯»å–æ–‡ä»¶
 		BufferedReader bufr = new BufferedReader(new FileReader(file));
 		
-		//2,½«ÕıÔò¹æÔò±àÒë³É¶ÔÏó¡£
+		//2,å°†æ­£åˆ™è§„åˆ™ç¼–è¯‘æˆå¯¹è±¡ã€‚
 		Pattern p = Pattern.compile(regex);
 		
 		String line = null;

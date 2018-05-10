@@ -1,4 +1,4 @@
-package cn.itcast.reflect.demo;
+ï»¿package cn.itcast.reflect.demo;
 
 import java.lang.reflect.Constructor;
 
@@ -10,11 +10,11 @@ public class Reflect_GetConstructor {
 	 */
 	public static void main(String[] args) throws Exception {
 		/*
-		 * Èç¹ûÒªÍ¨¹ıÖ¸¶¨µÄ¹¹Ôìº¯Êı³õÊ¼»¯¶ÔÏóÔõÃ´°ìÄØ£¿
-		 * Ë¼Â·£º
-		 * 1£¬»ñÈ¡×Ö½ÚÂëÎÄ¼ş¶ÔÏó¡£
-		 * 2£¬ÔÙ»ñÈ¡¸ø¶¨µÄ¹¹Ôìº¯Êı¡£
-		 * 3£¬Í¨¹ı¹¹Ôìº¯Êı³õÊ¼»¯¶ÔÏó¡£
+		 * å¦‚æœè¦é€šè¿‡æŒ‡å®šçš„æ„é€ å‡½æ•°åˆå§‹åŒ–å¯¹è±¡æ€ä¹ˆåŠå‘¢ï¼Ÿ
+		 * æ€è·¯ï¼š
+		 * 1ï¼Œè·å–å­—èŠ‚ç æ–‡ä»¶å¯¹è±¡ã€‚
+		 * 2ï¼Œå†è·å–ç»™å®šçš„æ„é€ å‡½æ•°ã€‚
+		 * 3ï¼Œé€šè¿‡æ„é€ å‡½æ•°åˆå§‹åŒ–å¯¹è±¡ã€‚
 		 * 
 		 */
 		
@@ -26,10 +26,10 @@ public class Reflect_GetConstructor {
 		String className = "cn.itcast.domain.Person";
 		Class clazz = Class.forName(className);
 		
-		//»ñÈ¡Ö¸¶¨µÄ¹¹ÔìÆ÷¡£»ñÈ¡PersonÀàÖĞÁ½¸ö²ÎÊıstring,intµÄ¹¹Ôìº¯Êı¡£
+		//è·å–æŒ‡å®šçš„æ„é€ å™¨ã€‚è·å–Personç±»ä¸­ä¸¤ä¸ªå‚æ•°string,intçš„æ„é€ å‡½æ•°ã€‚
 		Constructor cons = clazz.getConstructor(String.class,int.class);
 		
-		//ÓĞÁË¹¹ÔìÆ÷¶ÔÏóºó£¬Í¨¹ı¹¹ÔìÆ÷¶ÔÏóÀ´³õÊ¼»¯¸øÀà¶ÔÏó¡£
+		//æœ‰äº†æ„é€ å™¨å¯¹è±¡åï¼Œé€šè¿‡æ„é€ å™¨å¯¹è±¡æ¥åˆå§‹åŒ–ç»™ç±»å¯¹è±¡ã€‚
 		Object obj = cons.newInstance("wangwu",23);
 		//Person p = new Person("lisi",21);
 		

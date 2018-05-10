@@ -1,4 +1,4 @@
-package cn.itcast.regex.demo;
+ï»¿package cn.itcast.regex.demo;
 
 public class StringDemo {
 
@@ -7,8 +7,8 @@ public class StringDemo {
 	 */
 	public static void main(String[] args) {
 
-		// ÐèÇó£º¶ÔQQºÅÂë½øÐÐÐ£Ñé¡£
-		// ÒªÇó£º±ØÐë5~15Î»£¬0²»¿ÉÒÔ¿ªÍ· £¬±ØÐëÈ«ÊÇÊý×Ö¡£
+		// éœ€æ±‚ï¼šå¯¹QQå·ç è¿›è¡Œæ ¡éªŒã€‚
+		// è¦æ±‚ï¼šå¿…é¡»5~15ä½ï¼Œ0ä¸å¯ä»¥å¼€å¤´ ï¼Œå¿…é¡»å…¨æ˜¯æ•°å­—ã€‚
 
 		String qq = "1";
 		char ch = qq.charAt(0);
@@ -17,19 +17,19 @@ public class StringDemo {
 		boolean b = qq.matches("[1-9]\\d+");  
 		System.out.println(qq+"::::"+b);
 		
-		//ÕâÑù¹¦ÄÜ£¬¿ÉÒÔÍê³ÉqqºÅµÄÐ£Ñé£¬µ«ÊÇÓÐµãÂé·³¡£
+		//è¿™æ ·åŠŸèƒ½ï¼Œå¯ä»¥å®Œæˆqqå·çš„æ ¡éªŒï¼Œä½†æ˜¯æœ‰ç‚¹éº»çƒ¦ã€‚
 //		boolean b = checkQQ(qq);
 //		System.out.println(qq + ":" + b);
 	}
 
-	// ¶ÔQQºÅÂë½øÐÐÐ£Ñé¡£
+	// å¯¹QQå·ç è¿›è¡Œæ ¡éªŒã€‚
 	public static boolean checkQQ(String qq) {
 
-		// 1,»ñÈ¡qqµÄ³¤¶È£¬ÅÐ¶ÏÊÇ5~15Î»¡£
+		// 1,èŽ·å–qqçš„é•¿åº¦ï¼Œåˆ¤æ–­æ˜¯5~15ä½ã€‚
 		int len = qq.length();
 		if (len >= 5 && len <= 15) {
 
-			// 2,ÊÇ·ñÊÇ0¿ªÍ·¡£
+			// 2,æ˜¯å¦æ˜¯0å¼€å¤´ã€‚
 			if (!qq.startsWith("0")) {
 
 				try {
@@ -37,7 +37,7 @@ public class StringDemo {
 
 					return true;
 				} catch (NumberFormatException e) {
-//					System.out.println("·Ç·¨ÊýÖµ");
+//					System.out.println("éžæ³•æ•°å€¼");
 				}
 
 			}

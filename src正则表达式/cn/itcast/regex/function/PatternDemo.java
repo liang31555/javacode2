@@ -1,4 +1,4 @@
-package cn.itcast.regex.function;
+ï»¿package cn.itcast.regex.function;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,24 +9,24 @@ public class PatternDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//ÑİÊ¾ÕıÔò±í´ïÊ½µÄ»ñÈ¡¹¦ÄÜ¡£
+		//æ¼”ç¤ºæ­£åˆ™è¡¨è¾¾å¼çš„è·å–åŠŸèƒ½ã€‚
 		
-		//ĞèÇó£º»ñÈ¡×Ö·û´®ÖĞÓÉÈı¸ö×ÖÄ¸×é³ÉµÄµ¥´Ê¡£
+		//éœ€æ±‚ï¼šè·å–å­—ç¬¦ä¸²ä¸­ç”±ä¸‰ä¸ªå­—æ¯ç»„æˆçš„å•è¯ã€‚
 		//da jia zhu yi le,ming tian bu fang jia,over!
 		
 		
 		String str = "da jia zhu yi le,ming tian bu fang jia,over!";
 		System.out.println(str);
-		//¶¨Òå¹æÔò¡£
+		//å®šä¹‰è§„åˆ™ã€‚
 		String regex = "\\b[a-z]{3}\\b";
 		
-		//1,½«ÕıÔò×Ö·û´®±àÒë³ÉÕıÔò¶ÔÏó¡£
+		//1,å°†æ­£åˆ™å­—ç¬¦ä¸²ç¼–è¯‘æˆæ­£åˆ™å¯¹è±¡ã€‚
 		Pattern p = Pattern.compile(regex);
 		
-		//2,½«ÕıÔò¶ÔÏóºÍ×Ö·û´®Ïà¹ØÁª£¬²¢»ñÈ¡Æ¥ÅäÆ÷¡£
+		//2,å°†æ­£åˆ™å¯¹è±¡å’Œå­—ç¬¦ä¸²ç›¸å…³è”ï¼Œå¹¶è·å–åŒ¹é…å™¨ã€‚
 		Matcher m = p.matcher(str);
 		
-		//3,Ê¹ÓÃfindµÄ·½·¨
+		//3,ä½¿ç”¨findçš„æ–¹æ³•
 //		System.out.println(m.find());
 //		System.out.println(str.substring(m.start(),m.end()));
 //		System.out.println(m.group());

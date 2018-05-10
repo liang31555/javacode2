@@ -1,18 +1,18 @@
-package cn.itcast.reflect.test;
+ï»¿package cn.itcast.reflect.test;
 
 public class NoteBook {
 
 	/**
-	 * ÔËĞĞ
+	 * è¿è¡Œ
 	 */
 	public void run(){
 		System.out.println("notebook run");
 	}
 	
 	/**
-	 * Ê¹ÓÃusbµÄÉè±¸¡£
+	 * ä½¿ç”¨usbçš„è®¾å¤‡ã€‚
 	 */
-	public void useUSB(USB usb){//¶àÌ¬
+	public void useUSB(USB usb){//å¤šæ€
 		if(usb!=null){
 			usb.open();
 			usb.close();
