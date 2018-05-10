@@ -1,4 +1,4 @@
-package cn.itcast.net.my;
+ï»¿package cn.itcast.net.my;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,18 +16,18 @@ public class MyBrowser {
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		
 		/*
-		 * Ä£ÄâÒ»¸öä¯ÀÀÆ÷¡£·¢ËÍÖ®Ç°IE·¢ËÍµÄhttpÏûÏ¢¡£
+		 * æ¨¡æ‹Ÿä¸€ä¸ªæµè§ˆå™¨ã€‚å‘é€ä¹‹å‰IEå‘é€çš„httpæ¶ˆæ¯ã€‚
 		 */
 		Socket s = new Socket("192.168.1.223",8080);
-		//°ÑIEµÄĞÅÏ¢·¢ËÍ¸ø·şÎñ¶Ë¡£
+		//æŠŠIEçš„ä¿¡æ¯å‘é€ç»™æœåŠ¡ç«¯ã€‚
 		PrintWriter out = new PrintWriter(s.getOutputStream(),true);
 		out.println("GET /myweb/3.html HTTP/1.1");
 		out.println("Accept: */*");
 		out.println("Host: 192.168.1.223:8080");
 		out.println("Connection: close");
-		out.println();//¿ÕĞĞ¡£
+		out.println();//ç©ºè¡Œã€‚
 		
-		//¶ÁÈ¡·şÎñ¶ËµÄÊı¾İ¡£
+		//è¯»å–æœåŠ¡ç«¯çš„æ•°æ®ã€‚
 		InputStream in = s.getInputStream();
 		byte[] buf = new byte[1024];
 		int len = in.read(buf);

@@ -1,4 +1,4 @@
-package cn.itcast.net.tcp;
+ï»¿package cn.itcast.net.tcp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,35 +15,35 @@ public class TransServer {
 	 */
 	public static void main(String[] args) throws IOException {
 
-		System.out.println("·şÎñ¶ËÔËĞĞ....");
-		// ·şÎñ¶Ë£º
-		// Ë¼Â·£º
-		// 1£¬´´½¨·şÎñ¶Ësocket Ã÷È·¶Ë¿Ú¡£
+		System.out.println("æœåŠ¡ç«¯è¿è¡Œ....");
+		// æœåŠ¡ç«¯ï¼š
+		// æ€è·¯ï¼š
+		// 1ï¼Œåˆ›å»ºæœåŠ¡ç«¯socket æ˜ç¡®ç«¯å£ã€‚
 		ServerSocket ss = new ServerSocket(10005);
 		while (true) {
-			// »ñÈ¡¿Í»§¶Ë¶ÔÏó¡£
+			// è·å–å®¢æˆ·ç«¯å¯¹è±¡ã€‚
 			Socket s = ss.accept();
 			System.out.println(s.getInetAddress().getHostAddress()+".....connected");
 
-			// 2£¬Ô´£ºsocketÊäÈëÁ÷¡£¶ÁÈ¡¿Í»§¶ËµÄ·¢¹ıÀ´µÄÊı¾İ¡£
+			// 2ï¼Œæºï¼šsocketè¾“å…¥æµã€‚è¯»å–å®¢æˆ·ç«¯çš„å‘è¿‡æ¥çš„æ•°æ®ã€‚
 			BufferedReader bufIn = new BufferedReader(new InputStreamReader(
 					s.getInputStream()));
 
-			// 3£¬Ä¿µÄ£ºsocketÊä³öÁ÷¡£½«×ª³É´óĞ´µÄÊı¾İ·¢ËÍ¸ø¿Í»§¶Ë¡£
+			// 3ï¼Œç›®çš„ï¼šsocketè¾“å‡ºæµã€‚å°†è½¬æˆå¤§å†™çš„æ•°æ®å‘é€ç»™å®¢æˆ·ç«¯ã€‚
 			PrintWriter out = new PrintWriter(s.getOutputStream(),true);
 
-			// 4£¬Æµ·±µÄ¶ÁĞ´²Ù×÷¡£
+			// 4ï¼Œé¢‘ç¹çš„è¯»å†™æ“ä½œã€‚
 			String line = null;
 			while ((line = bufIn.readLine()) != null) {
-				if("over".equals(line)){//Èç¹û¿Í»§¶Ë·¢¹ıÀ´µÄÊÇover£¬×ª»»½áÊø¡£
+				if("over".equals(line)){//å¦‚æœå®¢æˆ·ç«¯å‘è¿‡æ¥çš„æ˜¯overï¼Œè½¬æ¢ç»“æŸã€‚
 					break;
 				}
 				System.out.println(line);
-				// ½«¶ÁÈ¡µ½µÄ×ÖÄ¸Êı¾İ×ª³É´óĞ´£¬·¢»Ø¸ø¿Í»§¶Ë¡£
+				// å°†è¯»å–åˆ°çš„å­—æ¯æ•°æ®è½¬æˆå¤§å†™ï¼Œå‘å›ç»™å®¢æˆ·ç«¯ã€‚
 				out.println(line.toUpperCase());
 //				out.flush();
 			}
-			// 5£¬¹Ø±Õ¿Í»§¶Ë¡£
+			// 5ï¼Œå…³é—­å®¢æˆ·ç«¯ã€‚
 			s.close();
 		}
 

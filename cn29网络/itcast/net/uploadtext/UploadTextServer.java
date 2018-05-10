@@ -1,4 +1,4 @@
-package cn.itcast.net.uploadtext;
+ï»¿package cn.itcast.net.uploadtext;
 
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -17,24 +17,24 @@ public class UploadTextServer {
 	public static void main(String[] args) throws IOException {
 
 
-		System.out.println("ÉÏ´«ÎÄ±¾·şÎñ¶ËÔËĞĞ....");
-		// ·şÎñ¶Ë£º
-		// Ë¼Â·£º
-		// 1£¬´´½¨·şÎñ¶Ësocket Ã÷È·¶Ë¿Ú¡£
+		System.out.println("ä¸Šä¼ æ–‡æœ¬æœåŠ¡ç«¯è¿è¡Œ....");
+		// æœåŠ¡ç«¯ï¼š
+		// æ€è·¯ï¼š
+		// 1ï¼Œåˆ›å»ºæœåŠ¡ç«¯socket æ˜ç¡®ç«¯å£ã€‚
 		ServerSocket ss = new ServerSocket(10006);
 		while (true) {
-			// »ñÈ¡¿Í»§¶Ë¶ÔÏó¡£
+			// è·å–å®¢æˆ·ç«¯å¯¹è±¡ã€‚
 			Socket s = ss.accept();
 			System.out.println(s.getInetAddress().getHostAddress()+".....connected");
 
-			// 2£¬Ô´£ºsocketÊäÈëÁ÷¡£¶ÁÈ¡¿Í»§¶ËµÄ·¢¹ıÀ´µÄÊı¾İ¡£
+			// 2ï¼Œæºï¼šsocketè¾“å…¥æµã€‚è¯»å–å®¢æˆ·ç«¯çš„å‘è¿‡æ¥çš„æ•°æ®ã€‚
 			BufferedReader bufIn = new BufferedReader(new InputStreamReader(
 					s.getInputStream()));
 
-			// 3£¬Ä¿µÄ£ºÎÄ¼ş¡£
+			// 3ï¼Œç›®çš„ï¼šæ–‡ä»¶ã€‚
 			PrintWriter pw = new PrintWriter(new FileWriter("tempfile\\server.txt"),true);
 
-			// 4£¬Æµ·±µÄ¶ÁĞ´²Ù×÷¡£
+			// 4ï¼Œé¢‘ç¹çš„è¯»å†™æ“ä½œã€‚
 			String line = null;
 			while ((line = bufIn.readLine()) != null) {
 //				if("over".equals(line)){
@@ -43,11 +43,11 @@ public class UploadTextServer {
 				pw.println(line);
 			}
 			
-			// 5£¬·¢»Ø¸ø¿Í»§¶ËÉÏ´«³É¹¦×ÖÑù¡£
+			// 5ï¼Œå‘å›ç»™å®¢æˆ·ç«¯ä¸Šä¼ æˆåŠŸå­—æ ·ã€‚
 			PrintWriter out = new PrintWriter(s.getOutputStream(),true);
-			out.println("ÉÏ´«³É¹¦");
+			out.println("ä¸Šä¼ æˆåŠŸ");
 			
-			// 6£¬¹Ø±Õ¿Í»§¶Ë¡£
+			// 6ï¼Œå…³é—­å®¢æˆ·ç«¯ã€‚
 			s.close();
 		}
 

@@ -1,4 +1,4 @@
-package cn.itcast.net.uploadpic;
+ï»¿package cn.itcast.net.uploadpic;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -11,15 +11,15 @@ public class UploadPicServer {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		System.out.println("ÉÏ´«Í¼Æ¬·şÎñ¶ËÔËĞĞ......");
-		// ´´½¨server  socket ¡£
+		System.out.println("ä¸Šä¼ å›¾ç‰‡æœåŠ¡ç«¯è¿è¡Œ......");
+		// åˆ›å»ºserver  socket ã€‚
 		ServerSocket ss = new ServerSocket(10007);
 
 		while (true) {
-			// »ñÈ¡¿Í»§¶Ë¡£
+			// è·å–å®¢æˆ·ç«¯ã€‚
 			Socket s = ss.accept();
 			
-			//ÊµÏÖ¶à¸ö¿Í»§¶Ë²¢·¢ÉÏ´«£¬·şÎñÆ÷¶Ë±ØĞëÆô¶¯×ö¸öÏß³ÌÀ´Íê³É¡£
+			//å®ç°å¤šä¸ªå®¢æˆ·ç«¯å¹¶å‘ä¸Šä¼ ï¼ŒæœåŠ¡å™¨ç«¯å¿…é¡»å¯åŠ¨åšä¸ªçº¿ç¨‹æ¥å®Œæˆã€‚
 			new Thread(new UploadPic(s)).start();
 			
 		}
