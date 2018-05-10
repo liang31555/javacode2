@@ -1,15 +1,15 @@
-package cn.itcast.reflect.test;
+ï»¿package cn.itcast.reflect.test;
 
 public interface USB {
 
 	/**
-	 * ¿ªÆô¡£
+	 * å¼€å¯ã€‚
 	 * 
 	 */
 	void open();
 	
 	/**
-	 * ¹Ø±Õ¡£
+	 * å…³é—­ã€‚
 	 */
 	void close();
 }

@@ -1,4 +1,4 @@
-package cn.itcast.regex;
+ï»¿package cn.itcast.regex;
 
 public class RegexDemo {
 
@@ -8,8 +8,8 @@ public class RegexDemo {
 	public static void main(String[] args) {
 		
 		/*
-		 * ¶ÔQQºÅ½øĞĞĞ£Ñé¡£
-		 * ÒªÇó£º5-15Î»£¬ 0²»¿ÉÒÔ¿ªÍ·¡£±ØĞë¶¼ÊÇÊı×Ö¡£
+		 * å¯¹QQå·è¿›è¡Œæ ¡éªŒã€‚
+		 * è¦æ±‚ï¼š5-15ä½ï¼Œ 0ä¸å¯ä»¥å¼€å¤´ã€‚å¿…é¡»éƒ½æ˜¯æ•°å­—ã€‚
 		 */
 		
 		String qq = "1234567890123456";
@@ -28,7 +28,7 @@ public class RegexDemo {
 				Long num = Long.parseLong(qq);
 				flag = true;
 				}catch(NumberFormatException e){
-					System.out.println("³öÏÖ·Ç·¨Êı×Ö");
+					System.out.println("å‡ºç°éæ³•æ•°å­—");
 				}
 			
 			}

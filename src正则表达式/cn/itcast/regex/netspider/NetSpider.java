@@ -1,4 +1,4 @@
-package cn.itcast.regex.netspider;
+ï»¿package cn.itcast.regex.netspider;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,11 +21,11 @@ public class NetSpider {
 	public static void main(String[] args) throws IOException {
 
 		/*
-		 * ÍøÂçÅÀ³æ£ºµ½ÍøÂçÖĞÍ¨¹ıÖ¸¶¨¹æÔò»ñÈ¡Êı¾İµÄ³ÌĞò¡£
+		 * ç½‘ç»œçˆ¬è™«ï¼šåˆ°ç½‘ç»œä¸­é€šè¿‡æŒ‡å®šè§„åˆ™è·å–æ•°æ®çš„ç¨‹åºã€‚
 		 * 
-		 * ÅÀÖ¸¶¨ÎÄ¼şÖĞµÄÊı¾İ£º Ë¼Â·£» 1£¬¶ÁÈ¡ÎÄ¼ş¡£ 2£¬¶Ô¶Áµ½µÄ×Ö·û´®½øĞĞ¹æÔòÆ¥Åä¡£Ö»Òª·ûºÏ¹æÔò¾Í»ñÈ¡¡£
+		 * çˆ¬æŒ‡å®šæ–‡ä»¶ä¸­çš„æ•°æ®ï¼š æ€è·¯ï¼› 1ï¼Œè¯»å–æ–‡ä»¶ã€‚ 2ï¼Œå¯¹è¯»åˆ°çš„å­—ç¬¦ä¸²è¿›è¡Œè§„åˆ™åŒ¹é…ã€‚åªè¦ç¬¦åˆè§„åˆ™å°±è·å–ã€‚
 		 */
-		// ¶¨Òå¹æÔò¡£
+		// å®šä¹‰è§„åˆ™ã€‚
 		String regex = "\\w+@\\w+(\\.\\w+)+";// 1@1.1
 		// List<String> list = getMailByLoacl(regex);
 		List<String> list = getMailByNet(regex);
@@ -37,21 +37,21 @@ public class NetSpider {
 	public static List<String> getMailByNet(String regex) throws IOException {
 
 		String str_url = "http://bbs.tianya.cn/post-enterprise-401802-5.shtml";
-		// 1,½«Æä·â×°³ÉµÄURL¶ÔÏó¡£
+		// 1,å°†å…¶å°è£…æˆçš„URLå¯¹è±¡ã€‚
 		URL url = new URL(str_url);
 
-		// 2,´ò¿ªÁ¬½Ó¡£
+		// 2,æ‰“å¼€è¿æ¥ã€‚
 		URLConnection conn = url.openConnection();
 
-		// 3,»ñÈ¡¶ÁÈ¡Á÷¡£
+		// 3,è·å–è¯»å–æµã€‚
 		InputStream in = conn.getInputStream();
 
-		// 4,¶ÁÈ¡²Ù×÷¡£
+		// 4,è¯»å–æ“ä½œã€‚
 		BufferedReader bufr = new BufferedReader(new InputStreamReader(in));
 
 		String line = null;
 
-		// »ñÈ¡¹¦ÄÜ¡£
+		// è·å–åŠŸèƒ½ã€‚
 
 		Pattern p = Pattern.compile(regex);
 
@@ -73,12 +73,12 @@ public class NetSpider {
 	}
 
 	public static List<String> getMailByLoacl(String regex) throws IOException {
-		// 1,¶ÁÈ¡ÎÄ¼ş¡£
+		// 1,è¯»å–æ–‡ä»¶ã€‚
 		BufferedReader bufr = new BufferedReader(new FileReader("mail.html"));
 
 		String line = null;
 
-		// »ñÈ¡¹¦ÄÜ¡£
+		// è·å–åŠŸèƒ½ã€‚
 
 		Pattern p = Pattern.compile(regex);
 

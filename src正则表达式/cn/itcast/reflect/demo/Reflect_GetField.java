@@ -1,4 +1,4 @@
-package cn.itcast.reflect.demo;
+ï»¿package cn.itcast.reflect.demo;
 
 import java.lang.reflect.Field;
 
@@ -10,7 +10,7 @@ public class Reflect_GetField {
 	 */
 	public static void main(String[] args) throws Exception {
 		/*
-		 * »ñÈ¡×Ö¶Î¡£
+		 * è·å–å­—æ®µã€‚
 		 */
 		getFieldDemo();
 	}
@@ -22,21 +22,21 @@ public class Reflect_GetField {
 		
 		String fieldName = "age";
 		
-		//»ñÈ¡age×Ö¶Î¶ÔÏó¡£
-//		Field field = clazz.getField(fieldName);//»ñÈ¡ÊÇ¹«¹²µÄ×Ö¶Î¡£
+		//è·å–ageå­—æ®µå¯¹è±¡ã€‚
+//		Field field = clazz.getField(fieldName);//è·å–æ˜¯å…¬å…±çš„å­—æ®µã€‚
 		Field field = clazz.getDeclaredField(fieldName);
 		
-//		getXXX:»ñÈ¡¶¼ÊÇÀàÖĞ¹«¹²µÄ³ÉÔ±¡£
-//		getDeclaredXXX:»ñÈ¡±¾ÀàÖĞÒÑÓĞµÄ³ÉÔ±¡£
+//		getXXX:è·å–éƒ½æ˜¯ç±»ä¸­å…¬å…±çš„æˆå‘˜ã€‚
+//		getDeclaredXXX:è·å–æœ¬ç±»ä¸­å·²æœ‰çš„æˆå‘˜ã€‚
 //		System.out.println(field);
 		
-		//¶ÔÆä½øĞĞÖµµÄÉèÖÃ£¬±ØĞëÏÈÓĞ¶ÔÏó¡£
+		//å¯¹å…¶è¿›è¡Œå€¼çš„è®¾ç½®ï¼Œå¿…é¡»å…ˆæœ‰å¯¹è±¡ã€‚
 		Object obj = clazz.newInstance();
 		
 		
-		//Í¨¹ı²éÕÒ¸¸ÀàAccessiableObjectµÄ·½·¨¡£setAccessiable(true);
-		field.setAccessible(true);//È¡ÏûÈ¨ÏŞ¼ì²é£¬±©Á¦·ÃÎÊ¡£Ò»°ã²»·ÃÎÊË½ÓĞ¡£
-		field.set(obj, 30);//IllegalAccessException:age×Ö¶ÎÊÇË½ÓĞµÄ¡£
+		//é€šè¿‡æŸ¥æ‰¾çˆ¶ç±»AccessiableObjectçš„æ–¹æ³•ã€‚setAccessiable(true);
+		field.setAccessible(true);//å–æ¶ˆæƒé™æ£€æŸ¥ï¼Œæš´åŠ›è®¿é—®ã€‚ä¸€èˆ¬ä¸è®¿é—®ç§æœ‰ã€‚
+		field.set(obj, 30);//IllegalAccessException:ageå­—æ®µæ˜¯ç§æœ‰çš„ã€‚
 		
 		System.out.println(field.get(obj));
 	}

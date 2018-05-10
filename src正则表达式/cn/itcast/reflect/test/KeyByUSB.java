@@ -1,4 +1,4 @@
-package cn.itcast.reflect.test;
+﻿package cn.itcast.reflect.test;
 
 public class KeyByUSB implements USB {
 

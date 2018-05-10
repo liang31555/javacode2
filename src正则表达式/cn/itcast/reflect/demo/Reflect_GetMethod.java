@@ -1,4 +1,4 @@
-package cn.itcast.reflect.demo;
+Ôªøpackage cn.itcast.reflect.demo;
 
 import java.lang.reflect.Method;
 
@@ -12,7 +12,7 @@ public class Reflect_GetMethod {
 		
 
 		/*
-		 * ªÒ»°∑Ω∑®°£
+		 * Ëé∑ÂèñÊñπÊ≥ï„ÄÇ
 		 */
 		
 		getMethodDemo2();
