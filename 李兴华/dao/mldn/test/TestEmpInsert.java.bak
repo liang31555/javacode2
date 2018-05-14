@@ -1,4 +1,4 @@
-﻿package cn.mldn.test;
+package cn.mldn.test;
 
 import java.util.Date;
 
@@ -9,8 +9,8 @@ public class TestEmpInsert {
 	public static void main(String[] args) {
 		Emp vo = new Emp();
 		vo.setEmpno(8889);
-		vo.setEname("陈冠佑");
-		vo.setJob("摄影师");
+		vo.setEname("�¹ڵv");
+		vo.setJob("��Ӱʦ");
 		vo.setHiredate(new Date());
 		vo.setSal(10.0);
 		vo.setComm(0.5);

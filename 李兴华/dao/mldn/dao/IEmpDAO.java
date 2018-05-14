@@ -1,35 +1,35 @@
-package cn.mldn.dao;
+ï»¿package cn.mldn.dao;
 
 import java.util.List;
 
 import cn.mldn.vo.Emp;
 /**
- * ¶¨Òåemp±íµÄÊı¾İ²ãµÄ²Ù×÷±ê×¼
+ * å®šä¹‰empè¡¨çš„æ•°æ®å±‚çš„æ“ä½œæ ‡å‡†
  * @author mldn
  */
 public interface IEmpDAO extends IDAO<Integer,Emp> {
 	/**
-	 * ²éÑ¯¹ÍÔ±µÄÏêÏ¸ĞÅÏ¢£¬°üÀ¨¹ÍÔ±¶ÔÓ¦µÄÁìµ¼ĞÅÏ¢ÒÔ¼°ËùÔÚµÄ²¿ÃÅĞÅÏ¢
-	 * @param id Òª²éÑ¯µÄ¹ÍÔ±±àºÅ
-	 * @return ËùÓĞµÄÊı¾İÒÔVO¶ÔÏó·µ»Ø£¬Èç¹ûÃ»ÓĞÔò·µ»Ønull
-	 * @throws Exception SQL²éÑ¯´íÎó
+	 * æŸ¥è¯¢é›‡å‘˜çš„è¯¦ç»†ä¿¡æ¯ï¼ŒåŒ…æ‹¬é›‡å‘˜å¯¹åº”çš„é¢†å¯¼ä¿¡æ¯ä»¥åŠæ‰€åœ¨çš„éƒ¨é—¨ä¿¡æ¯
+	 * @param id è¦æŸ¥è¯¢çš„é›‡å‘˜ç¼–å·
+	 * @return æ‰€æœ‰çš„æ•°æ®ä»¥VOå¯¹è±¡è¿”å›ï¼Œå¦‚æœæ²¡æœ‰åˆ™è¿”å›null
+	 * @throws Exception SQLæŸ¥è¯¢é”™è¯¯
 	 */
 	public Emp findByIdDetails(Integer id) throws Exception ;
 	/**
-	 * ²éÑ¯¹ÍÔ±µÄÍêÕûĞÅÏ¢
-	 * @return ËùÓĞµÄÊı¾İ¶ÔÏóÒÔList¼¯ºÏ·µ»Ø£¬Èç¹ûÃ»ÓĞÊı¾İ¼¯ºÏ³¤¶ÈÎª0£¨size() == 0£©
-	 * @throws Exception SQL²éÑ¯´íÎó
+	 * æŸ¥è¯¢é›‡å‘˜çš„å®Œæ•´ä¿¡æ¯
+	 * @return æ‰€æœ‰çš„æ•°æ®å¯¹è±¡ä»¥Listé›†åˆè¿”å›ï¼Œå¦‚æœæ²¡æœ‰æ•°æ®é›†åˆé•¿åº¦ä¸º0ï¼ˆsize() == 0ï¼‰
+	 * @throws Exception SQLæŸ¥è¯¢é”™è¯¯
 	 */
 	public List<Emp> findAllDetails() throws Exception ;
 	/**
-	 * ·ÖÒ³²éÑ¯¹ÍÔ±µÄÍêÕûĞÅÏ¢
-	 * @param currentPage µ±Ç°ËùÔÚµÄÒ³
-	 * @param lineSize Ã¿ÓĞİ­ÏÔÊ¾Êı¾İĞĞÊı
-	 * @param column Òª½øĞĞÄ£ºı²éÑ¯µÄÊı¾İÁĞ
-	 * @param keyWord Ä£ºı²éÑ¯µÄ¹Ø¼ü×Ö
-	 * @return Èç¹û±íÖĞÓĞÊı¾İ£¬ÔòËùÓĞµÄÊı¾İ»á·â×°ÎªVO¶ÔÏó¶øºóÀûÓÃList¼¯ºÏ·µ»Ø£¬<br>
-	 * Èç¹ûÃ»ÓĞÊı¾İ£¬ÄÇÃ´¼¯ºÏµÄ³¤¶ÈÎª0£¨size() == 0£¬²»ÊÇnull£©
-	 * @throws Exception SQLÖ´ĞĞÒì³£
+	 * åˆ†é¡µæŸ¥è¯¢é›‡å‘˜çš„å®Œæ•´ä¿¡æ¯
+	 * @param currentPage å½“å‰æ‰€åœ¨çš„é¡µ
+	 * @param lineSize æ¯æœ‰èªæ˜¾ç¤ºæ•°æ®è¡Œæ•°
+	 * @param column è¦è¿›è¡Œæ¨¡ç³ŠæŸ¥è¯¢çš„æ•°æ®åˆ—
+	 * @param keyWord æ¨¡ç³ŠæŸ¥è¯¢çš„å…³é”®å­—
+	 * @return å¦‚æœè¡¨ä¸­æœ‰æ•°æ®ï¼Œåˆ™æ‰€æœ‰çš„æ•°æ®ä¼šå°è£…ä¸ºVOå¯¹è±¡è€Œååˆ©ç”¨Listé›†åˆè¿”å›ï¼Œ<br>
+	 * å¦‚æœæ²¡æœ‰æ•°æ®ï¼Œé‚£ä¹ˆé›†åˆçš„é•¿åº¦ä¸º0ï¼ˆsize() == 0ï¼Œä¸æ˜¯nullï¼‰
+	 * @throws Exception SQLæ‰§è¡Œå¼‚å¸¸
 	 */
 	public List<Emp> findAllSplitDetails(Integer currentPage,Integer lineSize,String column,String keyWord) throws Exception ;
 }

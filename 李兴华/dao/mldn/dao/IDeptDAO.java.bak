@@ -1,4 +1,4 @@
-﻿package cn.mldn.dao;
+package cn.mldn.dao;
 
 import cn.mldn.vo.Dept;
 

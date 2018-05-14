@@ -1,4 +1,4 @@
-ï»¿package cn.mldn.dao.impl;
+package cn.mldn.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -39,7 +39,7 @@ public class DeptDAOImpl implements IDeptDAO {
 
 	@Override
 	public boolean doRemoveBatch(Set<Integer> ids) throws Exception {
-		if (ids == null || ids.size() == 0) {	// æ²¡æœ‰è¦åˆ é™¤çš„æ•°æ®
+		if (ids == null || ids.size() == 0) {	// Ã»ÓĞÒªÉ¾³ıµÄÊı¾İ
 			return false ;
 		}
 		StringBuffer sql = new StringBuffer() ;
@@ -88,12 +88,12 @@ public class DeptDAOImpl implements IDeptDAO {
 	@Override
 	public List<Dept> findAllSplit(Integer currentPage, Integer lineSize, String column, String keyWord)
 			throws Exception {
-		throw new Exception("æ­¤æ–¹æ³•æœªå®ç°ï¼") ;
+		throw new Exception("´Ë·½·¨Î´ÊµÏÖ£¡") ;
 	}
 
 	@Override
 	public Integer getAllCount(String column, String keyWord) throws Exception {
-		throw new Exception("æ­¤æ–¹æ³•æœªå®ç°ï¼") ;
+		throw new Exception("´Ë·½·¨Î´ÊµÏÖ£¡") ;
 	}
 
 }

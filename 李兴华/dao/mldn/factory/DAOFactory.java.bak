@@ -1,4 +1,4 @@
-﻿package cn.mldn.factory;
+package cn.mldn.factory;
 
 import java.sql.Connection;
 

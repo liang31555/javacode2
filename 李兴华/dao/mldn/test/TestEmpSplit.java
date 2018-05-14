@@ -1,4 +1,4 @@
-package cn.mldn.test;
+ï»¿package cn.mldn.test;
 
 import java.util.Iterator;
 import java.util.List;
@@ -13,12 +13,12 @@ public class TestEmpSplit {
 		try {
 			Map<String, Object> map = ServiceFactory.getIEmpServiceInstance().list(2, 5, "ename", "");
 			int count = (Integer) map.get("empCount");
-			System.out.println("Êı¾İÁ¿£º" + count);
+			System.out.println("æ•°æ®é‡ï¼š" + count);
 			List<Emp> all = (List<Emp>) map.get("allEmps");
 			Iterator<Emp> iter = all.iterator();
 			while (iter.hasNext()) {
 				Emp vo = iter.next();
-				System.out.println(vo.getEname() + "£¬" + vo.getJob());
+				System.out.println(vo.getEname() + "ï¼Œ" + vo.getJob());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

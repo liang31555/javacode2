@@ -1,4 +1,4 @@
-ï»¿package cn.mldn.test.junit;
+package cn.mldn.test.junit;
 
 import java.util.HashSet;
 import java.util.List;
@@ -16,8 +16,8 @@ public class IDeptServiceTest {
 	public void testInsert() {
 		Dept vo = new Dept();
 		vo.setDeptno(11);
-		vo.setDname("ç½šç«™");
-		vo.setLoc("åŒ—äº¬");
+		vo.setDname("·£Õ¾");
+		vo.setLoc("±±¾©");
 		try {
 			TestCase.assertTrue(ServiceFactory.getIDeptServiceInstance().insert(vo));
 		} catch (Exception e) {
@@ -29,8 +29,8 @@ public class IDeptServiceTest {
 	public void testUpdate() {
 		Dept vo = new Dept();
 		vo.setDeptno(11);
-		vo.setDname("è£¸è·‘");
-		vo.setLoc("åŒ—äº¬");
+		vo.setDname("ÂãÅÜ");
+		vo.setLoc("±±¾©");
 		try {
 			TestCase.assertTrue(ServiceFactory.getIDeptServiceInstance().update(vo));
 		} catch (Exception e) {

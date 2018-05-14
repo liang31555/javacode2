@@ -1,4 +1,4 @@
-﻿package cn.mldn.vo;
+package cn.mldn.vo;
 
 import java.io.Serializable;
 import java.util.List;

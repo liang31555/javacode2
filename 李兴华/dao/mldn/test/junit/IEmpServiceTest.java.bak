@@ -1,4 +1,4 @@
-ï»¿package cn.mldn.test.junit;
+package cn.mldn.test.junit;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -17,15 +17,15 @@ public class IEmpServiceTest {
 	private static int empno;
 
 	static {
-		empno = new Random().nextInt(10000); // åŠ¨æ€ç”Ÿæˆä¸€ä¸ªempnoçš„æ•°æ®
+		empno = new Random().nextInt(10000); // ¶¯Ì¬Éú³ÉÒ»¸öempnoµÄÊı¾İ
 	}
 
 	@Test
 	public void testInsert() {
 		Emp vo = new Emp();
 		vo.setEmpno(empno);
-		vo.setEname("å•Šæœ¬");
-		vo.setJob("èŒä½");
+		vo.setEname("°¡±¾");
+		vo.setJob("Ö°Î»");
 		vo.setHiredate(new Date());
 		vo.setSal(10.0);
 		vo.setComm(0.5);
@@ -40,8 +40,8 @@ public class IEmpServiceTest {
 	public void testUpdate() {
 		Emp vo = new Emp();
 		vo.setEmpno(9637);
-		vo.setEname("é™ˆå† ä½‘");
-		vo.setJob("äººä½“");
+		vo.setEname("³Â¹Úµv");
+		vo.setJob("ÈËÌå");
 		vo.setHiredate(new Date());
 		vo.setSal(10.0);
 		vo.setComm(0.5);

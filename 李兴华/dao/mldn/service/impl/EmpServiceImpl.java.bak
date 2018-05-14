@@ -1,4 +1,4 @@
-ï»¿package cn.mldn.service.impl;
+package cn.mldn.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,13 +11,13 @@ import cn.mldn.service.IEmpService;
 import cn.mldn.vo.Emp;
 
 public class EmpServiceImpl implements IEmpService {
-	// åœ¨è¿™ä¸ªç±»çš„å¯¹è±¡å†…éƒ¨å°±æä¾›æœ‰ä¸€ä¸ªæ•°æ®åº“è¿æ¥ç±»çš„å®ä¾‹åŒ–å¯¹è±¡
+	// ÔÚÕâ¸öÀàµÄ¶ÔÏóÄÚ²¿¾ÍÌá¹©ÓĞÒ»¸öÊı¾İ¿âÁ¬½ÓÀàµÄÊµÀı»¯¶ÔÏó
 	private DatabaseConnection dbc = new DatabaseConnection();
 
 	@Override
 	public boolean insert(Emp vo) throws Exception {
 		try {
-			// è¦å¢åŠ çš„é›‡å‘˜ç¼–å·å¦‚æœä¸å­˜åœ¨ï¼Œåˆ™findById()è¿”å›çš„ç»“æœå°±æ˜¯nullï¼Œnullè¡¨ç¤ºå¯ä»¥è¿›è¡Œæ–°é›‡å‘˜æ•°æ®çš„ä¿å­˜
+			// ÒªÔö¼ÓµÄ¹ÍÔ±±àºÅÈç¹û²»´æÔÚ£¬ÔòfindById()·µ»ØµÄ½á¹û¾ÍÊÇnull£¬null±íÊ¾¿ÉÒÔ½øĞĞĞÂ¹ÍÔ±Êı¾İµÄ±£´æ
 			if (DAOFactory.getIEmpDAOInstance(this.dbc.getConnection()).findById(vo.getEmpno()) == null) {
 				return DAOFactory.getIEmpDAOInstance(this.dbc.getConnection()).doCreate(vo);
 			}

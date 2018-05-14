@@ -1,4 +1,4 @@
-ï»¿package cn.mldn.dao.impl;
+package cn.mldn.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,12 +14,12 @@ import cn.mldn.vo.Dept;
 import cn.mldn.vo.Emp;
 
 public class EmpDAOImpl implements IEmpDAO {
-	private Connection conn ;	// éœ€è¦åˆ©ç”¨Connectionå¯¹è±¡æ“ä½œ
+	private Connection conn ;	// ĞèÒªÀûÓÃConnection¶ÔÏó²Ù×÷
 	private PreparedStatement pstmt ;
 	/**
-	 * å¦‚æœè¦æƒ³ä½¿ç”¨æ•°æ®å±‚è¿›è¡ŒåŸå­æ€§çš„åŠŸèƒ½æ“ä½œå®ç°ï¼Œå¿…é¡»è¦æä¾›æœ‰Connectionæ¥å£å¯¹è±¡<br>
-	 * å¦å¤–ï¼Œç”±äºå¼€å‘ä¹‹ä¸­ä¸šåŠ¡å±‚è¦è°ƒç”¨æ•°æ®å±‚ï¼Œæ‰€ä»¥æ•°æ®åº“çš„æ‰“å¼€ä¸å…³é—­äº¤ç”±ä¸šåŠ¡å±‚å¤„ç†
-	 * @param conn è¡¨ç¤ºæ•°æ®åº“è¿æ¥å¯¹è±¡
+	 * Èç¹ûÒªÏëÊ¹ÓÃÊı¾İ²ã½øĞĞÔ­×ÓĞÔµÄ¹¦ÄÜ²Ù×÷ÊµÏÖ£¬±ØĞëÒªÌá¹©ÓĞConnection½Ó¿Ú¶ÔÏó<br>
+	 * ÁíÍâ£¬ÓÉÓÚ¿ª·¢Ö®ÖĞÒµÎñ²ãÒªµ÷ÓÃÊı¾İ²ã£¬ËùÒÔÊı¾İ¿âµÄ´ò¿ªÓë¹Ø±Õ½»ÓÉÒµÎñ²ã´¦Àí
+	 * @param conn ±íÊ¾Êı¾İ¿âÁ¬½Ó¶ÔÏó
 	 */
 	public EmpDAOImpl(Connection conn) {
 		this.conn = conn ;
@@ -34,12 +34,12 @@ public class EmpDAOImpl implements IEmpDAO {
 		this.pstmt.setDate(4, new java.sql.Date(vo.getHiredate().getTime()));
 		this.pstmt.setDouble(5, vo.getSal());
 		this.pstmt.setDouble(6, vo.getComm());
-		if (vo.getMgr() == null) {	// æ²¡æœ‰è®¾ç½®é¢†å¯¼æ•°æ®
+		if (vo.getMgr() == null) {	// Ã»ÓĞÉèÖÃÁìµ¼Êı¾İ
 			this.pstmt.setNull(7, Types.NULL); // this.pstmt.setString(7, null);
 		} else {
 			this.pstmt.setInt(7, vo.getMgr().getEmpno());
 		}
-		if (vo.getDept() == null) {	// æ²¡æœ‰è®¾ç½®éƒ¨é—¨æ•°æ®
+		if (vo.getDept() == null) {	// Ã»ÓĞÉèÖÃ²¿ÃÅÊı¾İ
 			this.pstmt.setNull(8, Types.NULL);
 		} else {
 			this.pstmt.setInt(8, vo.getDept().getDeptno());
@@ -56,12 +56,12 @@ public class EmpDAOImpl implements IEmpDAO {
 		this.pstmt.setDate(3, new java.sql.Date(vo.getHiredate().getTime()));
 		this.pstmt.setDouble(4, vo.getSal());
 		this.pstmt.setDouble(5, vo.getComm());
-		if (vo.getMgr() == null) {	// æ²¡æœ‰è®¾ç½®é¢†å¯¼æ•°æ®
+		if (vo.getMgr() == null) {	// Ã»ÓĞÉèÖÃÁìµ¼Êı¾İ
 			this.pstmt.setNull(6, Types.NULL); // this.pstmt.setString(7, null);
 		} else {
 			this.pstmt.setInt(6, vo.getMgr().getEmpno());
 		}
-		if (vo.getDept() == null) {	// æ²¡æœ‰è®¾ç½®éƒ¨é—¨æ•°æ®
+		if (vo.getDept() == null) {	// Ã»ÓĞÉèÖÃ²¿ÃÅÊı¾İ
 			this.pstmt.setNull(7, Types.NULL);
 		} else {
 			this.pstmt.setInt(7, vo.getDept().getDeptno());
@@ -72,7 +72,7 @@ public class EmpDAOImpl implements IEmpDAO {
 
 	@Override
 	public boolean doRemoveBatch(Set<Integer> ids) throws Exception {
-		if (ids == null || ids.size() == 0) {	// æ²¡æœ‰è¦åˆ é™¤çš„æ•°æ®
+		if (ids == null || ids.size() == 0) {	// Ã»ÓĞÒªÉ¾³ıµÄÊı¾İ
 			return false ;
 		}
 		StringBuffer sql = new StringBuffer() ;

@@ -1,4 +1,4 @@
-﻿package cn.mldn.factory;
+package cn.mldn.factory;
 
 import cn.mldn.service.IDeptService;
 import cn.mldn.service.IEmpService;
