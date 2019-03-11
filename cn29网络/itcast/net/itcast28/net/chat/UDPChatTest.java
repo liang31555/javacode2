@@ -88,6 +88,7 @@ class Rece implements Runnable {
 
 			try {
 				byte[] buf = new byte[1024];
+				byte[] buf = new byte[1024];
 				DatagramPacket dp = new DatagramPacket(buf, buf.length);
 				ds.receive(dp);// 阻塞
 				
