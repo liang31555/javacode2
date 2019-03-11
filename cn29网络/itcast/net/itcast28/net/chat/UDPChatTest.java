@@ -17,19 +17,19 @@ public class UDPChatTest {
 	public static void main(String[] args) throws IOException {
 
 		/*
-		 * °¸ÀıÒ»£ºÍ¨¹ıudpÊµÏÖÈºÁÄ³ÌĞò¡£ Ë¼Â·£º Õâ¸ö³ÌĞòÖĞ¼ÈÓĞÊÕÓÖÓĞ·¢£¬ĞèÒªÍ¬Ê±Ö´ĞĞ£¬ĞèÒªÊ¹ÓÃ¶àÏß³Ì¼¼Êõ¡£
-		 * Ò»¸öÏß³Ì¸ºÔğ·¢£¬Ò»¸öÏß³Ì¸ºÔğÊÕ¡£ĞèÒªÁ½¸öÈÎÎñ¡£
+		 * æ¡ˆä¾‹ä¸€ï¼šé€šè¿‡udpå®ç°ç¾¤èŠç¨‹åºã€‚ æ€è·¯ï¼š è¿™ä¸ªç¨‹åºä¸­æ—¢æœ‰æ”¶åˆæœ‰å‘ï¼Œéœ€è¦åŒæ—¶æ‰§è¡Œï¼Œéœ€è¦ä½¿ç”¨å¤šçº¿ç¨‹æŠ€æœ¯ã€‚
+		 * ä¸€ä¸ªçº¿ç¨‹è´Ÿè´£å‘ï¼Œä¸€ä¸ªçº¿ç¨‹è´Ÿè´£æ”¶ã€‚éœ€è¦ä¸¤ä¸ªä»»åŠ¡ã€‚
 		 */
 
-		//·¢ËÍ¶ËµÄsocket ½ÓÊÕ¶ËµÄsocket
+		//å‘é€ç«¯çš„socket æ¥æ”¶ç«¯çš„socket
 		DatagramSocket sendSocket = new DatagramSocket();
 		DatagramSocket receSocket = new DatagramSocket(10002);
 		
-		//´´½¨ÈÎÎñ¶ÔÏó¡£
+		//åˆ›å»ºä»»åŠ¡å¯¹è±¡ã€‚
 		Send send = new Send(sendSocket);
 		Rece rece = new Rece(receSocket);
 		
-		//´´½¨Ïß³Ì²¢¿ªÆô¡£
+		//åˆ›å»ºçº¿ç¨‹å¹¶å¼€å¯ã€‚éæ— æƒ…
 		Thread t1 = new Thread(send);
 		Thread t2 = new Thread(rece);
 		t1.start();
@@ -38,7 +38,7 @@ public class UDPChatTest {
 
 }
 
-// ·¢ËÍÈÎÎñ
+// å‘é€ä»»åŠ¡
 class Send implements Runnable {
 
 	private DatagramSocket ds;
@@ -55,7 +55,7 @@ class Send implements Runnable {
 					System.in));
 			String line = null;
 			while ((line = bufr.readLine()) != null) {
-				byte[] buf = line.getBytes();// ½«Êı¾İ×ª³É×Ö½ÚÊı×é¡£
+				byte[] buf = line.getBytes();// å°†æ•°æ®è½¬æˆå­—èŠ‚æ•°ç»„ã€‚
 				DatagramPacket dp = new DatagramPacket(buf, buf.length,
 						InetAddress.getByName("192.168.1.223"), 10002);
 				ds.send(dp);
@@ -64,7 +64,7 @@ class Send implements Runnable {
 				}
 			}
 
-			// 4£¬¹Ø±Õ×ÊÔ´¡£
+			// 4ï¼Œå…³é—­èµ„æºã€‚
 			ds.close();
 		} catch (IOException e) {
 
@@ -72,7 +72,7 @@ class Send implements Runnable {
 	}
 }
 
-// ½ÓÊÕÈÎÎñ¡£
+// æ¥æ”¶ä»»åŠ¡ã€‚
 class Rece implements Runnable {
 
 	private DatagramSocket ds;
@@ -89,14 +89,14 @@ class Rece implements Runnable {
 			try {
 				byte[] buf = new byte[1024];
 				DatagramPacket dp = new DatagramPacket(buf, buf.length);
-				ds.receive(dp);// ×èÈû
+				ds.receive(dp);// é˜»å¡
 				
 				String ip = dp.getAddress().getHostAddress();
 				int port = dp.getPort();
 				String text = new String(dp.getData(), 0, dp.getLength());
 				System.out.println(ip + ":" + port + ":" + text);
 				if(text.equals("886")){
-					System.out.println(ip+"....Àë¿ªÁÄÌìÊÒ");
+					System.out.println(ip+"....ç¦»å¼€èŠå¤©å®¤");
 				}
 			} catch (IOException e) {
 
